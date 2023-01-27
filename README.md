@@ -1,21 +1,32 @@
-# clean-code-javascript
+# Clean Code JavaScript
 
-## Table of Contents
+## فهرس المحتويات
 
-1. [Introduction](#introduction)
-2. [Variables](#variables)
-3. [Functions](#functions)
-4. [Objects and Data Structures](#objects-and-data-structures)
-5. [Classes](#classes)
-6. [SOLID](#solid)
-7. [Testing](#testing)
-8. [Concurrency](#concurrency)
-9. [Error Handling](#error-handling)
-10. [Formatting](#formatting)
-11. [Comments](#comments)
-12. [Translation](#translation)
+1- [المقدمة](#المقدمة)
 
-## Introduction
+2- [المتغيرات](#المتغيرات)
+
+3- [الدوال](#الدوال)
+
+4- [الكائنات وهياكل البيانات](#الكائنات-وهياكل-البيانات)
+
+5- [الفئات](#الفئات)
+
+6- [مصطلح SOLID](#مصطلح-SOLID)
+
+7- [الاختبار](#الاختبار)
+
+8- [التزامن](#التزامن)
+
+9- [معالجة الأخطاء](#معالجة-الأخطاء)
+
+10- [التنسيق](#التنسيق)
+
+11- [التعليقات](#التعليقات)
+
+12- [الترجمة](#الترجمة)
+
+## المقدمة
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
@@ -43,9 +54,9 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
-## **Variables**
+## **المتغيرات**
 
-### Use meaningful and pronounceable variable names
+### #1 Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -59,9 +70,7 @@ const yyyymmdstr = moment().format("YYYY/MM/DD");
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-**[⬆ back to top](#table-of-contents)**
-
-### Use the same vocabulary for the same type of variable
+### #2 Use the same vocabulary for the same type of variable
 
 **Bad:**
 
@@ -76,8 +85,6 @@ getCustomerRecord();
 ```javascript
 getUser();
 ```
-
-**[⬆ back to top](#table-of-contents)**
 
 ### Use searchable names
 
@@ -105,7 +112,7 @@ const MILLISECONDS_PER_DAY = 60 * 60 * 24 * 1000; //86400000;
 setTimeout(blastOff, MILLISECONDS_PER_DAY);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use explanatory variables
 
@@ -129,7 +136,7 @@ const [_, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid Mental Mapping
 
@@ -164,7 +171,7 @@ locations.forEach(location => {
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't add unneeded context
 
@@ -199,7 +206,7 @@ function paintCar(car, color) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use default parameters instead of short circuiting or conditionals
 
@@ -225,9 +232,9 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Functions**
+
+## **الدوال**
 
 ### Function arguments (2 or fewer ideally)
 
@@ -285,7 +292,7 @@ createMenu({
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Functions should do one thing
 
@@ -321,7 +328,7 @@ function isActiveClient(client) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Function names should say what they do
 
@@ -349,7 +356,7 @@ const date = new Date();
 addMonthToDate(1, date);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Functions should only be one level of abstraction
 
@@ -421,7 +428,7 @@ function parse(tokens) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Remove duplicate code
 
@@ -507,7 +514,7 @@ function showEmployeeList(employees) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Set default objects with Object.assign
 
@@ -560,7 +567,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't use flags as function parameters
 
@@ -590,7 +597,7 @@ function createTempFile(name) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid Side Effects (part 1)
 
@@ -639,7 +646,7 @@ console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid Side Effects (part 2)
 
@@ -695,7 +702,7 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't write to global functions
 
@@ -729,7 +736,7 @@ class SuperArray extends Array {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Favor functional programming over imperative programming
 
@@ -794,7 +801,7 @@ const totalOutput = programmerOutput.reduce(
 );
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Encapsulate conditionals
 
@@ -818,7 +825,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid negative conditionals
 
@@ -846,7 +853,7 @@ if (isDOMNodePresent(node)) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid conditionals
 
@@ -906,7 +913,7 @@ class Cessna extends Airplane {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid type-checking (part 1)
 
@@ -935,7 +942,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid type-checking (part 2)
 
@@ -972,7 +979,7 @@ function combine(val1, val2) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't over-optimize
 
@@ -1000,7 +1007,7 @@ for (let i = 0; i < list.length; i++) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Remove dead code
 
@@ -1034,9 +1041,9 @@ const req = newRequestModule;
 inventoryTracker("apples", req, "www.inventory-awesome.io");
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Objects and Data Structures**
+
+## **الكائنات وهياكل البيانات**
 
 ### Use getters and setters
 
@@ -1097,7 +1104,7 @@ const account = makeBankAccount();
 account.setBalance(100);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Make objects have private members
 
@@ -1137,9 +1144,9 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Classes**
+
+## **الفئات**
 
 ### Prefer ES2015/ES6 classes over ES5 plain functions
 
@@ -1224,7 +1231,7 @@ class Human extends Mammal {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use method chaining
 
@@ -1304,7 +1311,7 @@ class Car {
 const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Prefer composition over inheritance
 
@@ -1374,9 +1381,9 @@ class Employee {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **SOLID**
+
+## **مصطلح SOLID**
 
 ### Single Responsibility Principle (SRP)
 
@@ -1436,7 +1443,7 @@ class UserSettings {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Open/Closed Principle (OCP)
 
@@ -1527,7 +1534,7 @@ class HttpRequester {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Liskov Substitution Principle (LSP)
 
@@ -1646,7 +1653,7 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Interface Segregation Principle (ISP)
 
@@ -1724,7 +1731,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Dependency Inversion Principle (DIP)
 
@@ -1827,9 +1834,9 @@ const inventoryTracker = new InventoryTracker(
 inventoryTracker.requestItems();
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Testing**
+
+## **الاختبار**
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -1898,9 +1905,9 @@ describe("MomentJS", () => {
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Concurrency**
+
+## **التزامن**
 
 ### Use Promises, not callbacks
 
@@ -1949,7 +1956,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Async/Await are even cleaner than Promises
 
@@ -1998,9 +2005,9 @@ async function getCleanCodeArticle() {
 getCleanCodeArticle()
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Error Handling**
+
+## **معالجة الأخطاء**
 
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
@@ -2077,9 +2084,9 @@ getdata()
   });
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Formatting**
+
+## **التنسيق**
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
@@ -2128,7 +2135,7 @@ class Animal {}
 class Alpaca {}
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Function callers and callees should be close
 
@@ -2216,9 +2223,9 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## **Comments**
+
+## **التعليقات**
 
 ### Only comment things that have business logic complexity.
 
@@ -2263,7 +2270,7 @@ function hashIt(data) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't leave commented out code in your codebase
 
@@ -2284,7 +2291,7 @@ doStuff();
 doStuff();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't have journal comments
 
@@ -2313,7 +2320,7 @@ function combine(a, b) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid positional markers
 
@@ -2352,9 +2359,9 @@ const actions = function() {
 };
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
-## Translation
+
+## الترجمة
 
 This is also available in other languages:
 
@@ -2382,4 +2389,4 @@ This is also available in other languages:
 - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [mindfr1k/clean-code-javascript-ua](https://github.com/mindfr1k/clean-code-javascript-ua)
 - ![vi](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnamese**: [hienvd/clean-code-javascript/](https://github.com/hienvd/clean-code-javascript/)
 
-**[⬆ back to top](#table-of-contents)**
+
