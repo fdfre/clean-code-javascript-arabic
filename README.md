@@ -39,7 +39,7 @@ you shout when reading code](https://raw.githubusercontent.com/muh-osman/clean-c
 
 يتجاوز عمر هندسة البرمجيات 50 عامًا بقليل ، وما زلنا نتعلم الكثير. عندما تكون هندسة البرمجيات قديمة قدم الهندسة المعمارية نفسها ، فربما سيكون لدينا قواعد أصعب يجب اتباعها. في الوقت الحالي ، استخدم هذه الإرشادات كمحك لتقييم جودة كود JavaScript الذي تنتجه أنت وفريقك.
 
-شيء آخر يجيب أن تعرفه وهو أن هذه الارشادات لن تجعلك على الفور مطور برامج أفضل ، والعمل بها لسنوات طويلة لا يعني أنك لن ترتكب أخطاء. تبدأ كل قطعة من الكود كمسودة أولى ، مثل تشكيل الطين في شكله النهائي. أخيرًا ، نزيل العيوب عندما نراجعها مع فريق العمل. لا تضغط على نفسك بسبب كثرة المسودات التي تحتاج إلى تحسين. تغلب على الكود بدلا من ذلك!
+شيء آخر يجيب أن تعرفه وهو أن هذه الارشادات لن تجعلك على الفور مطور أفضل ، والعمل بها لسنوات طويلة لا يعني أنك لن ترتكب أخطاء. تبدأ كل قطعة من الكود كمسودة أولى ، مثل تشكيل الطين في شكله النهائي. أخيرًا ، نزيل العيوب عندما نراجعها مع فريق العمل. لا تضغط على نفسك بسبب كثرة المسودات التي تحتاج إلى تحسين. تغلب على الكود بدلا من ذلك!
 
 ## **المتغيرات**
 
@@ -73,15 +73,9 @@ getCustomerRecord();
 getUser();
 ```
 
-### #3 Use searchable names
+### #3 استخدم أسماء قابلة للبحث
 
-We will read more code than we will ever write. It's important that the code we
-do write is readable and searchable. By _not_ naming variables that end up
-being meaningful for understanding our program, we hurt our readers.
-Make your names searchable. Tools like
-[buddy.js](https://github.com/danielstjules/buddy.js) and
-[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
-can help identify unnamed constants.
+ستقرأ أكود أكثر مما ستكتب. لذا من المهم أن يكون الكود الذي تكتبه قابل للقراءة والبحث. فتجاهل تسمية المتغيرات الهامة لفهم برنامجك، ستؤذي قراءتك. اجعل أسماءك قابلة للبحث. يمكن أن تساعد أدوات مثل [buddy.js](https://github.com/danielstjules/buddy.js) و [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md) في تحديد الثوابت غير المسماة.
 
 **Bad⛔:**
 
@@ -99,7 +93,7 @@ const MILLISECONDS_PER_DAY = 60 * 60 * 24 * 1000; //86400000;
 setTimeout(blastOff, MILLISECONDS_PER_DAY);
 ```
 
-### #4 Use explanatory variables
+### #4 استخدم المتغيرات التوضيحية
 
 **Bad⛔:**
 
@@ -121,9 +115,9 @@ const [_, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
-### #5 Avoid Mental Mapping
+### #5 تجنب الخرائط الذهنية
 
-Explicit is better than implicit.
+الصريح أفضل من الضمني.
 
 **Bad⛔:**
 
@@ -154,10 +148,10 @@ locations.forEach(location => {
 });
 ```
 
-### #6 Don't add unneeded context
+### #6 لا تقم بإضافة سياق غير ضروري
 
-If your class/object name tells you something, don't repeat that in your
-variable name.
+إذا كان اسم الـ class/object يدل على شيئ محدد، فلا تقم بتكراره في اسم المتغير.
+
 
 **Bad⛔:**
 
@@ -187,12 +181,9 @@ function paintCar(car, color) {
 }
 ```
 
-### #7 Use default parameters instead of short circuiting or conditionals
+### #7 استخدم parameter الافتراضي بدلاً من الاختصارات أو الشروط
 
-Default parameters are often cleaner than short circuiting. Be aware that if you
-use them, your function will only provide default values for `undefined`
-arguments. Other "falsy" values such as `''`, `""`, `false`, `null`, `0`, and
-`NaN`, will not be replaced by a default value.
+غالبًا ما تكون الـ parameters  الافتراضية أنظف من الاختصارات. اعلم أنه في حالة استخدامها ، فإن وظيفتك ستقتصر على توفير القيم الافتراضية لـ arguments  `غير المعرفة`. اما القيم الـ "falsy" مثل `""` و `""` و `false` و `null` و `0` و `NaN` فلن يتم استبدالها بقيمة افتراضية.
 
 **Bad⛔:**
 
@@ -303,7 +294,7 @@ function isActiveClient(client) {
 }
 ```
 
-### #10 Function names should say what they do
+### #10 اسم الـ Function يجب ان يدل على وظيفتها
 
 **Bad⛔:**
 
@@ -315,6 +306,7 @@ function addToDate(date, month) {
 const date = new Date();
 
 // It's hard to tell from the function name what is added
+// من الصعب معرفة ما تضيفه الـ Function من خلال اسمها
 addToDate(date, 1);
 ```
 
