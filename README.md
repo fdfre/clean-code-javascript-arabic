@@ -31,28 +31,15 @@
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://raw.githubusercontent.com/muh-osman/clean-code-javascript-arabic/master/image.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
+مبادئ هندسة البرمجيات ، من كتاب روبرت سي مارتن [_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) ،
+تم تكييفها مع JavaScript. هذا ليس دليل لأسلوب كتابة الكود. بل دليل لإنتاج
+كود جافا سكريبت [قابل للقراءة ولإعادة الاستخدام والبناء](https://github.com/ryanmcdermott/3rs-of-software-architecture).
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-_Clean Code_.
+لا يجب اتباع جميع هذه المبادئ بدقة ، خصوصا أنها غير متفق عليها عالميا. هذه مجرد إرشادات لا أكثر من ذلك ، لكنها مقننة على مدى سنوات عديدة من الخبرة الجماعية لمؤلفي كتاب _Clean Code_.
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
+يتجاوز عمر هندسة البرمجيات 50 عامًا بقليل ، وما زلنا نتعلم الكثير. عندما تكون هندسة البرمجيات قديمة قدم الهندسة المعمارية نفسها ، فربما سيكون لدينا قواعد أصعب يجب اتباعها. في الوقت الحالي ، استخدم هذه الإرشادات كمحك لتقييم جودة كود JavaScript الذي تنتجه أنت وفريقك.
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+شيء آخر يجيب أن تعرفه وهو أن هذه الارشادات لن تجعلك على الفور مطور برامج أفضل ، والعمل بها لسنوات طويلة لا يعني أنك لن ترتكب أخطاء. تبدأ كل قطعة من الكود كمسودة أولى ، مثل تشكيل الطين في شكله النهائي. أخيرًا ، نزيل العيوب عندما نراجعها مع فريق العمل. لا تضغط على نفسك بسبب كثرة المسودات التي تحتاج إلى تحسين. تغلب على الكود بدلا من ذلك!
 
 ## **المتغيرات**
 
