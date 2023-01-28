@@ -2310,4 +2310,4 @@ This is also available in other languages:
 
 - ![vi](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnamese**: [hienvd/clean-code-javascript/](https://github.com/hienvd/clean-code-javascript/)
 
-- ![ar](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Palestine.png) **العربية**: [muh-osman/clean-code-javascript-arabic](https://github.com/muh-osman/clean-code-javascript-arabic)
+- ![ar](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Palestine.png) **Arabic**: [muh-osman/clean-code-javascript-arabic](https://github.com/muh-osman/clean-code-javascript-arabic)
