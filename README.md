@@ -216,12 +216,8 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 1. عندما ينظر شخص ما إلى المعلومات العامة لـ function، يتضح على الفور ما هي الخصائص التي يتم استخدامها.
 2. يمكن استخدامها لمحاكاة الـ parameters المسماة.
-3. Destructuring also clones the specified primitive values of the argument
-   object passed into the function. This can help prevent side effects. Note:
-   objects and arrays that are destructured from the argument object are NOT
-   cloned.
-4. Linters can warn you about unused properties, which would be impossible
-   without destructuring.
+3. يؤدي النشر أيضًا إلى استنساخ القيم الأولية المحددة لـ argument object الذي يتم تمريره إلى function. يمكن هذا أن يساعد على منع الآثار الجانبية. ملاحظة: لا يتم نسخ objects وarrays التي تم نشرها من argument object.
+4. يمكن أن تحذرك Linters من الخصائص غير المستخدمة ، والتي ستكون مستحيلة دون التدمير.
 
 **Bad⛔:**
 
