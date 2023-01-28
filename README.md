@@ -70,7 +70,7 @@ const yyyymmdstr = moment().format("YYYY/MM/DD");
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-### #2 Use the same vocabulary for the same type of variable
+### #2 استخدم نفس الكلمات لنفس النوع من المتغيرات
 
 **Bad⛔:**
 
