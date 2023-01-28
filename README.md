@@ -204,29 +204,18 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 ## **الدوال**
 
-### #8 Function arguments (2 or fewer ideally)
+### #8 عدد الـ arguments المثالي (2 أو أقل)
 
-Limiting the amount of function parameters is incredibly important because it
-makes testing your function easier. Having more than three leads to a
-combinatorial explosion where you have to test tons of different cases with
-each separate argument.
+يعتبر الحد من عدد الـ parameters في الـ function أمرًا مهمًا للغاية لأنه يجعل اختبارالـ function أسهل. وبالعكس يؤدي وجود أكثر من ثلاثة إلى انفجار اندماجي حيث يتعين عليك اختبار العديد من الحالات المختلفة مع argument منفصلة.
 
-One or two arguments is the ideal case, and three should be avoided if possible.
-Anything more than that should be consolidated. Usually, if you have
-more than two arguments then your function is trying to do too much. In cases
-where it's not, most of the time a higher-level object will suffice as an
-argument.
+الحالة المثالية هي أن يكون هناك واحد أو اثنين من الـ arguments، ويجب تجنب ثلاث arguments إن أمكن. أي شيء أكثر من ذلك يجب أن يتم توحيده ودمجه. عادة ، إذا كان لديك أكثر من وسيطين(arguments) ، فإن الـ function الخاصة بك تحاول أداء الكثير من الوظائف. في الحالات التي لا يكون فيها الأمر كذلك ، فإن الـ object ذي المستوى الأعلى يكفي في معظم الأحيان كوسيط(argument).
 
-Since JavaScript allows you to make objects on the fly, without a lot of class
-boilerplate, you can use an object if you are finding yourself needing a
-lot of arguments.
+نظرًا لأن JavaScript تسمح لك بإنشاء object بشكل سريع، دون الحاجة الى الكثير من  الطبقات المعيارية، يمكنك استخدام الـ object إذا وجدت نفسك بحاجة إلى الكثير من الـ arguments.
 
-To make it obvious what properties the function expects, you can use the ES2015/ES6
-destructuring syntax. This has a few advantages:
+لتوضيح الخصائص التي يمكن أن تتوقعها من الـ function، يمكنك استخدام صيغة ES2015 / ES6. وهذه بعض مزاياها:
 
-1. When someone looks at the function signature, it's immediately clear what
-   properties are being used.
-2. It can be used to simulate named parameters.
+1. عندما ينظر شخص ما إلى المعلومات العامة لـ function، يتضح على الفور ما هي الخصائص التي يتم استخدامها.
+2. يمكن استخدامها لمحاكاة الـ parameters المسماة.
 3. Destructuring also clones the specified primitive values of the argument
    object passed into the function. This can help prevent side effects. Note:
    objects and arrays that are destructured from the argument object are NOT
@@ -260,13 +249,9 @@ createMenu({
 });
 ```
 
-### #9 Functions should do one thing
+### #9 الـ Functions يجب أن تقوم بوظيفة واحدا
 
-This is by far the most important rule in software engineering. When functions
-do more than one thing, they are harder to compose, test, and reason about.
-When you can isolate a function to just one action, it can be refactored
-easily and your code will read much cleaner. If you take nothing else away from
-this guide other than this, you'll be ahead of many developers.
+هذه هي القاعدة الأكثر أهمية في هندسة البرمجيات. عندما تقوم الـ Function بأكثر من وظيفة، يؤدي ذلك الى صعوبة تكوينها واختبارها وتفسيرها. بالتالي عندما تتمكن من عزل الـ Function لأداء وظيفة واحد فقط ، ستتمكن من إعادة بنائها بسهولة وستقرأ تعليماتها البرمجية بشكل أكثر وضوح. إذا أخذت هذه القاعدة بعين الاعتبار، فستتقدم على العديد من المطورين.
 
 **Bad⛔:**
 
@@ -306,7 +291,6 @@ function addToDate(date, month) {
 const date = new Date();
 
 // It's hard to tell from the function name what is added
-// من الصعب معرفة ما تضيفه الـ Function من خلال اسمها
 addToDate(date, 1);
 ```
 
