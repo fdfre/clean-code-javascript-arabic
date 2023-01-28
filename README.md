@@ -56,7 +56,7 @@ improvement. Beat up the code instead!
 
 ## **المتغيرات**
 
-### #1 Use meaningful and pronounceable variable names
+### #1 استخدم اسماء متغيرات ذات معنى وقابلة للنطق
 
 **Bad⛔:**
 
