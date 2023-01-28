@@ -819,9 +819,7 @@ if (isDOMNodePresent(node)) {
 }
 ```
 
-
-
-### Avoid conditionals
+### #21 Avoid conditionals
 
 This seems like an impossible task. Upon first hearing this, most people say,
 "how am I supposed to do anything without an `if` statement?" The answer is that
@@ -879,9 +877,7 @@ class Cessna extends Airplane {
 }
 ```
 
-
-
-### Avoid type-checking (part 1)
+### #22 Avoid type-checking (part 1)
 
 JavaScript is untyped, which means your functions can take any type of argument.
 Sometimes you are bitten by this freedom and it becomes tempting to do
@@ -908,9 +904,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-
-
-### Avoid type-checking (part 2)
+### #23 Avoid type-checking (part 2)
 
 If you are working with basic primitive values like strings and integers,
 and you can't use polymorphism but you still feel the need to type-check,
@@ -945,9 +939,7 @@ function combine(val1, val2) {
 }
 ```
 
-
-
-### Don't over-optimize
+### #24 Don't over-optimize
 
 Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
 times, if you are optimizing then you are just wasting your time. [There are good
@@ -973,9 +965,7 @@ for (let i = 0; i < list.length; i++) {
 }
 ```
 
-
-
-### Remove dead code
+### #25 Remove dead code
 
 Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
@@ -1007,11 +997,9 @@ const req = newRequestModule;
 inventoryTracker("apples", req, "www.inventory-awesome.io");
 ```
 
-
-
 ## **الكائنات وهياكل البيانات**
 
-### Use getters and setters
+### #26 Use getters and setters
 
 Using getters and setters to access data on objects could be better than simply
 looking for a property on an object. "Why?" you might ask. Well, here's an
@@ -1070,9 +1058,7 @@ const account = makeBankAccount();
 account.setBalance(100);
 ```
 
-
-
-### Make objects have private members
+### #27 Make objects have private members
 
 This can be accomplished through closures (for ES5 and below).
 
@@ -1110,11 +1096,9 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
 
-
-
 ## **الفئات Classes**
 
-### Prefer ES2015/ES6 classes over ES5 plain functions
+### #28 Prefer ES2015/ES6 classes over ES5 plain functions
 
 It's very difficult to get readable class inheritance, construction, and method
 definitions for classical ES5 classes. If you need inheritance (and be aware
@@ -1197,9 +1181,7 @@ class Human extends Mammal {
 }
 ```
 
-
-
-### Use method chaining
+### #29 Use method chaining
 
 This pattern is very useful in JavaScript and you see it in many libraries such
 as jQuery and Lodash. It allows your code to be expressive, and less verbose.
@@ -1277,9 +1259,7 @@ class Car {
 const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 ```
 
-
-
-### Prefer composition over inheritance
+### #30 Prefer composition over inheritance
 
 As stated famously in [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
 you should prefer composition over inheritance where you can. There are lots of
@@ -1347,11 +1327,9 @@ class Employee {
 }
 ```
 
-
-
 ## **مصطلح SOLID**
 
-### Single Responsibility Principle (SRP)
+### #31 Single Responsibility Principle (SRP)
 
 As stated in Clean Code, "There should never be more than one reason for a class
 to change". It's tempting to jam-pack a class with a lot of functionality, like
@@ -1409,9 +1387,7 @@ class UserSettings {
 }
 ```
 
-
-
-### Open/Closed Principle (OCP)
+### #32 Open/Closed Principle (OCP)
 
 As stated by Bertrand Meyer, "software entities (classes, modules, functions,
 etc.) should be open for extension, but closed for modification." What does that
@@ -1500,9 +1476,7 @@ class HttpRequester {
 }
 ```
 
-
-
-### Liskov Substitution Principle (LSP)
+### #33 Liskov Substitution Principle (LSP)
 
 This is a scary term for a very simple concept. It's formally defined as "If S
 is a subtype of T, then objects of type T may be replaced with objects of type S
@@ -1619,9 +1593,7 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
-
-
-### Interface Segregation Principle (ISP)
+### #34 Interface Segregation Principle (ISP)
 
 JavaScript doesn't have interfaces so this principle doesn't apply as strictly
 as others. However, it's important and relevant even with JavaScript's lack of
@@ -1697,9 +1669,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-
-
-### Dependency Inversion Principle (DIP)
+### #35 Dependency Inversion Principle (DIP)
 
 This principle states two essential things:
 
@@ -1819,7 +1789,7 @@ Test Driven Development (TDD), that is great, but the main point is to just
 make sure you are reaching your coverage goals before launching any feature,
 or refactoring an existing one.
 
-### Single concept per test
+### #36 Single concept per test
 
 **Bad⛔:**
 
@@ -1871,11 +1841,9 @@ describe("MomentJS", () => {
 });
 ```
 
-
-
 ## **التزامن**
 
-### Use Promises, not callbacks
+### #37 Use Promises, not callbacks
 
 Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
 Promises are a built-in global type. Use them!
@@ -1922,9 +1890,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-
-
-### Async/Await are even cleaner than Promises
+### #38 Async/Await are even cleaner than Promises
 
 Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
 which offer an even cleaner solution. All you need is a function that is prefixed
@@ -1980,7 +1946,7 @@ identified when something in your program has gone wrong and it's letting
 you know by stopping function execution on the current stack, killing the
 process (in Node), and notifying you in the console with a stack trace.
 
-### Don't ignore caught errors
+### #39 Don't ignore caught errors
 
 Doing nothing with a caught error doesn't give you the ability to ever fix
 or react to said error. Logging the error to the console (`console.log`)
@@ -2015,7 +1981,7 @@ try {
 }
 ```
 
-### Don't ignore rejected promises
+### #40 Don't ignore rejected promises
 
 For the same reason you shouldn't ignore caught errors
 from `try/catch`.
@@ -2063,7 +2029,7 @@ For things that don't fall under the purview of automatic formatting
 (indentation, tabs vs. spaces, double vs. single quotes, etc.) look here
 for some guidance.
 
-### Use consistent capitalization
+### #41 Use consistent capitalization
 
 JavaScript is untyped, so capitalization tells you a lot about your variables,
 functions, etc. These rules are subjective, so your team can choose whatever
@@ -2101,9 +2067,7 @@ class Animal {}
 class Alpaca {}
 ```
 
-
-
-### Function callers and callees should be close
+### #42 Function callers and callees should be close
 
 If a function calls another, keep those functions vertically close in the source
 file. Ideally, keep the caller right above the callee. We tend to read code from
@@ -2189,11 +2153,9 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-
-
 ## **التعليقات**
 
-### Only comment things that have business logic complexity.
+### #43 Only comment things that have business logic complexity
 
 Comments are an apology, not a requirement. Good code _mostly_ documents itself.
 
@@ -2236,9 +2198,7 @@ function hashIt(data) {
 }
 ```
 
-
-
-### Don't leave commented out code in your codebase
+### #44 Don't leave commented out code in your codebase
 
 Version control exists for a reason. Leave old code in your history.
 
@@ -2257,9 +2217,7 @@ doStuff();
 doStuff();
 ```
 
-
-
-### Don't have journal comments
+### #45 Don't have journal comments
 
 Remember, use version control! There's no need for dead code, commented code,
 and especially journal comments. Use `git log` to get history!
@@ -2286,9 +2244,7 @@ function combine(a, b) {
 }
 ```
 
-
-
-### Avoid positional markers
+### #46 Avoid positional markers
 
 They usually just add noise. Let the functions and variable names along with the
 proper indentation and formatting give the visual structure to your code.
@@ -2325,8 +2281,6 @@ const actions = function() {
 };
 ```
 
-
-
 ## الترجمة
 
 This is also available in other languages:
@@ -2353,6 +2307,7 @@ This is also available in other languages:
 - ![rs](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Serbia.png) **Serbian**: [doskovicmilos/clean-code-javascript/](https://github.com/doskovicmilos/clean-code-javascript)
 - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [bsonmez/clean-code-javascript](https://github.com/bsonmez/clean-code-javascript/tree/turkish-translation)
 - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [mindfr1k/clean-code-javascript-ua](https://github.com/mindfr1k/clean-code-javascript-ua)
+
 - ![vi](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnamese**: [hienvd/clean-code-javascript/](https://github.com/hienvd/clean-code-javascript/)
 
-
+- ![ar](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Palestine.png) **العربية**: [muh-osman/clean-code-javascript-arabic](https://github.com/muh-osman/clean-code-javascript-arabic)
