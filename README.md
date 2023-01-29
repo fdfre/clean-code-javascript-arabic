@@ -183,7 +183,7 @@ function paintCar(car, color) {
 
 ### #7 استخدم parameter الافتراضي بدلاً من الاختصارات أو الشروط
 
-غالبًا ما تكون الـ parameters  الافتراضية أنظف من الاختصارات. اعلم أنه في حالة استخدامها ، فإن وظيفتك ستقتصر على توفير القيم الافتراضية لـ arguments  `undefined`. اما القيم الـ "falsy" مثل `""` و `""` و `false` و `null` و `0` و `NaN` فلن يتم استبدالها بقيمة افتراضية.
+غالبًا ما تكون الـ parameters  الافتراضية أنظف من الاختصارات. اعلم أنه في حالة استخدامها ، فإن وظيفتك ستقتصر على توفير القيم الافتراضية لـ arguments غير المعرفة (`undefined`). اما القيم الـ "falsy" مثل `""` و `""` و `false` و `null` و `0` و `NaN` فلن يتم استبدالها بقيمة افتراضية.
 
 **Bad⛔:**
 
@@ -301,7 +301,7 @@ const date = new Date();
 addMonthToDate(1, date);
 ```
 
-### #11 Functions should only be one level of abstraction
+### #11 يجب أن تحتوي الـ Functions مستوى واحد من الأفكار المجردة
 
 When you have more than one level of abstraction your function is usually
 doing too much. Splitting up functions leads to reusability and easier
