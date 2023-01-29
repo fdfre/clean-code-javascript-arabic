@@ -301,7 +301,7 @@ const date = new Date();
 addMonthToDate(1, date);
 ```
 
-### #11 يجب أن تحتوي الـ Functions مستوى واحد من الأفكار المجردة
+### #11 يجب أن تحوي الـ Functions مستوى واحد من الأفكار المجردة
 
 When you have more than one level of abstraction your function is usually
 doing too much. Splitting up functions leads to reusability and easier
