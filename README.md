@@ -303,9 +303,7 @@ addMonthToDate(1, date);
 
 ### #11 يجب أن تحوي الـ Functions مستوى واحد من الأفكار المجردة
 
-When you have more than one level of abstraction your function is usually
-doing too much. Splitting up functions leads to reusability and easier
-testing.
+عندما يكون لديك أكثر من مستوى واحد من المهام والوظائف التي يفترض بالـ function أن تأديها فهذا يعني أن الـ function عادة ما تنفذ الكثير من المهام. بالتالي فإن تقسيم هذه المهام والوظائف الى عدة function يؤدي إلى سهولة إعادة استخدام الـ functions واختبارها.
 
 **Bad⛔:**
 
